@@ -18,6 +18,7 @@ const openCardImage = [
 	'white url("images/спартыўная гімнастыка1.png") no-repeat',
 	'white url("images/цяжкая атлетыка1.png") no-repeat'
 ]
+let firstOpen;
 let start = function(){
 	for(let i=0;i<12;i++){
 		const card = document.createElement('li');
@@ -35,6 +36,11 @@ buttonPlay.addEventListener('click', start);
 let displayCard=function(e){
 	e.target.slyle.background = 'white url("images/фехтаванне1.png") no-repeat';
 	e.target.slyle.backgroundSize = 'cover';
+	e.target.classList.add('rotation-effect');
+	firstOpen = e.target;
+	console.log(firstOpen);
+	secondOpen = e.target;
+	console.log(firstOpen);
 }
 
 cards.addEventListener('click', displayCard);
@@ -43,6 +49,7 @@ buttonBack.addEventListener('click', function () {
 	sectionGreeting.style.display = 'block';
 	sectionGameField.style.display = 'none';
 });
+
 let fillArray = function(){
 	let array = [];
 	for(let i=1;i<13;i++){
