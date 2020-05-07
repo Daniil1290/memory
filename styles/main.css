@@ -91,9 +91,16 @@ img{
 	transform: rotateY(0);
 	cursor: default;
 	backface-visibility: visible;
-	animation-duration: .5s;
+	animation-duration: .6s;
 	background-size: contain;
 }
+
+.disappearance{
+	opacity: 0;
+	visibility: hidden;
+	transition: opacity .3s, visibility 0s linear .5s;
+};
+
 @keyframes flipInY {
     from {
         transform: perspective(400px) rotate3d(0, 1, 0, 90deg);
